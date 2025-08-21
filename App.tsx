@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AppProvider } from './contexts/AppContext';
@@ -15,6 +14,8 @@ import BlogDetail from './pages/BlogDetail';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
 
+console.log('App.tsx loaded');
+
 const AppContent: React.FC = () => {
     const location = useLocation();
     
@@ -22,6 +23,8 @@ const AppContent: React.FC = () => {
     React.useEffect(() => {
         window.scrollTo(0, 0);
     }, [location.pathname]);
+
+    console.log('AppContent rendered');
 
     return (
         <div className="flex flex-col min-h-screen">
@@ -47,6 +50,7 @@ const AppContent: React.FC = () => {
 
 
 function App() {
+  console.log('App component rendered');
   return (
     <AppProvider>
       <HashRouter>

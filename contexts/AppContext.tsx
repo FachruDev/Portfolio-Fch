@@ -29,8 +29,8 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
       if (savedTheme && (savedTheme === Theme.LIGHT || savedTheme === Theme.DARK)) {
         return savedTheme;
       }
-      return window.matchMedia('(prefers-color-scheme: dark)').matches ? Theme.DARK : Theme.LIGHT;
     }
+    // Default to light theme
     return Theme.LIGHT;
   });
 
